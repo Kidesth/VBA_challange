@@ -1,47 +1,12 @@
-VBA_ challenge stocks Analysis
+# VBA_ challenge stocks Analysis
 
-Overview of the project:
+## Overview of the project:
 The purpose of this project was to refactor code to analyze stokes data from any year within the given workbook. For the first time, I used nested statements to analyze the given data. The refactor code upgrades the efficiency by looping through the data set once
 
- Results:
+## Results:
 My refactor code used a nested loop to find the stock return of change for a specified given year in my data
   I created any arrays of the ticker index volume 12 strings of the data. Then I used them as an index for my original loop while the inner loop went through the data looking for the information method the index thicker. 
 
-
-Sub AllStocksAnalysisRefactored()
-    Dim startTime As Single
-    Dim endTime  As Single
-
-    yearvalue = InputBox("What year would you like to run the analysis on?")
-
-    startTime = Timer
-    
-    'Format the output sheet on All Stocks Analysis worksheet
-    Worksheets("All Stocks Analysis").Activate
-    
-    Range("A1").Value = "All Stocks (" + yearvalue + ")"
-    
-    'Create a header row
-    Cells(3, 1).Value = "Ticker"
-    Cells(3, 2).Value = "Total Daily Volume"
-    Cells(3, 3).Value = "Return"
-
-    'Initialize array of all tickers
-    Dim tickers(12) As String
-    
-    tickers(0) = "AY"
-    tickers(1) = "CSIQ"
-    tickers(2) = "DQ"
-    tickers(3) = "ENPH"
-    tickers(4) = "FSLR"
-    tickers(5) = "HASI"
-    tickers(6) = "JKS"
-    tickers(7) = "RUN"
-    tickers(8) = "SEDG"
-    tickers(9) = "SPWR"
-    tickers(10) = "TERP"
-    tickers(11) = "VSLR"
-    
     'Activate data worksheet
     Worksheets(yearvalue).Activate
     
@@ -60,15 +25,12 @@ Sub AllStocksAnalysisRefactored()
     For i = 0 To 11
         tickervolumes(i) = 0
     Next i
-        
     
      'output the data for the current ticker
       ' Worksheets("DQ Analysis").Activate
       '      Cells(4 + i, 1).Value = ticker
        '     Cells(4 + i, 2).Value = totalvolume
        '      cells(4 + i, 3).value = tickerendingprices
-        
-    
        
         
     ''2b) Loop over all the rows in the spreadsheet.
@@ -133,11 +95,19 @@ Sub AllStocksAnalysisRefactored()
 
 End Sub
 
-	This returned the information I was running 0.3632813 seconds for the year 2017 and 0.0546875 for the year 2018.
-	Insert picture
+	This returned the information I was running 0.078125 seconds for the year 2017 and 2018 respectivley.
 
-Summary: 
+
+![VBA_challange_ 2017](https://user-images.githubusercontent.com/107454933/177095602-30d417b2-ecdb-405c-96ba-a90274c3c379.png)
+figure 1:2017 stock Analysis output screen
+
+
+![VBA_challange_ 2018](https://user-images.githubusercontent.com/107454933/177095608-6e2dc799-9884-4d18-a135-6a202950cda7.png)
+figure 2:2018 stock Analysis output screen
+
+## Summary: 
 •	The advantage and disadvantages of refactoring code.
 Refactoring is a key part of the coding process. When refactoring code is more efficient by using less memory or improving the logic of the code to make it easier for future users to read, Refactoring code does have a disadvantage as well. Code refactoring and restructuring are time-consuming. It’s not a project you can complete in a short time. Depending on the size and complexity of your app, code refactoring can take months to complete.  If the code was properly annotated, then it could be hard to decode the purpose of a certain line of the section of code.
+
 •	Pros and cons of refactoring code
  Refactoring code is a great way to explore alternative methods it also allowed further opportunities to debug different types of coding issues. Your code will be better organized for refactoring It won’t be any more function than it was before the change. Refactoring is just changing the structure of the code. 
